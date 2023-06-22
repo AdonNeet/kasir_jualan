@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
         if(is_null($r2) == false){
             $id_staffNow = strval($r2['id_staff']);
         } else {
-            $error2 = "terdapat kesalahan pada id_staff atau password terdapat kesalahan";
+            $error2 = "terdapat kesalahan pada id_staff atau password";
         }
     } else {
         $error2 = "Silahkan masukkan password";
