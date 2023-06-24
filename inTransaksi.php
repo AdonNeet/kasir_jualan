@@ -80,11 +80,11 @@ if (isset($_POST['submit'])) {
                     $commit = mysqli_query($koneksi, $q3);
     
                     // insert into log
-                    $q4 = "insert into log_gudang(tanggal, id_staff, id_rak, jumlah, ket) values ('$tanggal', '$id_staff', '$id_rak', $jumlah, 'reduce')";
+                    $q4 = "insert into log_gudang(tanggal, id_staff, id_rak, jumlah, ket) values ('$tanggal', '$id_staff', '$id_rak', $jumlah, 'selled')";
                     $commit = mysqli_query($koneksi, $q4);
     
                 }else{
-                    $error  = "Data Gagal masuk";
+                    $error1  = "Data Gagal masuk";
                 }
             }
         } else {
@@ -193,6 +193,13 @@ if (isset($_POST['submit'])) {
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="ID" name="data" placeholder="id_stuff atau stuff_name" value="<?php echo $data ?>">
                         </div>
+                    </div>    
+
+                    <div class="mb-3 row">
+                        <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="jumlah" value="<?php echo $jumlah ?>">
+                        </div>
                     </div>
 
                     <div class="mb-3 row">
@@ -203,17 +210,9 @@ if (isset($_POST['submit'])) {
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="ID" name="jumlah" value="<?php echo $jumlah ?>">
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
                         <label for="No" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="ID" name="pass"
-                                value="<?php echo $password ?>">
+                            <input type="text" class="form-control" id="ID" name="pass" value="<?php echo $password ?>">
                         </div>
                     </div>
 
