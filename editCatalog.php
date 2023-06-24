@@ -161,7 +161,7 @@ if(isset($_POST['submit'])){
                     $sukses = "Data berhasil diupdate";
 
                     // insert into log_barang
-                    $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('O01', '$today', '$id_stuff2', '$stuff_name2', '$kategori2', $harga2, 'edited')";
+                    $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('$id_staff', '$today', '$id_stuff2', '$stuff_name2', '$kategori2', $harga2, 'edited')";
                     $q1 = mysqli_query($koneksi, $sql1);
 
                     // jika id_stuff diganti, ganti juga digudang
@@ -457,11 +457,12 @@ if($op == 'edit' & isset($_GET['id'])){
                     <div class="col-1">
                         
                     </div>
-                    <div class="mb-3 row">
-                        <label><br><br>Note: Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah</label>
-                    </div>
             </div>
             
+        </div>
+
+        <div class="mb-3 row">
+            <label><br><br>Note: Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah<br></label>
         </div>
 
         <!--untuk mengeluarkan data-->

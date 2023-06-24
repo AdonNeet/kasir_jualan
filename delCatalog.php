@@ -16,13 +16,7 @@ $stok = "";
 $id_rak = "";
 $jumlah = "";
 
-$id_stuffOLD = "";
-
-$id_stuff2 = "";
-$stuff_name2 = "";
-$kategori2 = "";
-$harga2 = "";
-$stok2 = "";
+$avail = "";
 
 $id_staff = "";
 $pass = "";
@@ -93,7 +87,7 @@ if($op == 'delete'){
                 if($q1){
                     $sukses = "Berhasil menghapus data";
                     // insert into log_barang
-                    $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('O01', '$today', '$id', '$name', '$category', $price, 'withdraw')";
+                    $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('$id_staff', '$today', '$id', '$name', '$category', $price, 'withdraw')";
                     $q1 = mysqli_query($koneksi, $sql1);
     
                     // get stok saat ini
@@ -200,6 +194,15 @@ if($op == 'delete'){
                 }
                 ?>
 
+            <?php
+                $sql2 = "select id_stuff from barang where id_stuff = '$ID'";
+                $q2 = mysqli_query($koneksi, $sql2);
+                $r2 = mysqli_fetch_array($q2);
+            ?>
+
+            <?php
+            if(is_null($r2) == false) {
+            ?>
             <div class="mb-3">
                 Berikut merupakan data barang yang akan dihapus, silahkan untuk melakukan verifikasi diri
             </div>
@@ -255,13 +258,12 @@ if($op == 'delete'){
                         </div>
                     </div>
                 </div>
-
-                            <!-- sistem verifikasi -->
-                            <form action="" method="POST">
+                <!-- sistem verifikasi -->
+                <form action="" method="POST">
                                 <div class="mb-3 row">
                                     <label for="Karyawan" class="col-sm-2 col-form-label">Id Karyawan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="ID" name="id_staff" placeholder="id_staff" value="<?php echo $id_staff ?>">
+                                        <input type="text" class="form-control" id="ID" name="id_staff" placeholder="id_staff" value="">
                                     </div>
                                 </div>
 
@@ -269,7 +271,7 @@ if($op == 'delete'){
                                     <label for="No" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="ID" name="pass"
-                                            value="<?php echo $pass ?>">
+                                            value="">
                                     </div>
                                 </div>
 
@@ -282,13 +284,16 @@ if($op == 'delete'){
                                 <div class="col-1">
                                     
                                 </div>
-
-                                <div class="mb-3 row">
-                                    <label><br><br>Note: Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah</label>
-                                </div>
-                        </div>
-                    </div>
+            <?php // tidak akan muncul verifikator setelah menghapus barang 
+            }   
+            ?>
+            </div>  
+        </div>
+                            
                 
+        <div class="mb-3 row">
+            <label><br><br>Note: Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah<br></label>
+        </div>
 
         <!--untuk mengeluarkan data-->
         <div class="card">
