@@ -462,7 +462,11 @@ if($op == 'edit' & isset($_GET['id'])){
         </div>
 
         <div class="mb-3 row">
-            <label><br><br>Note: Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah<br></label>
+            <label><br><br>
+                    Note: <br>
+                        - Setelah mengubah id barang dan atau menghapus barang, kilk edit/delete pada barang yang ingin diubah <br>
+                        - Jika ingin menambah data barang yang baru klik add <br>
+            </label>
         </div>
 
         <!--untuk mengeluarkan data-->
