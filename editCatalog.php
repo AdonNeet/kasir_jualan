@@ -202,7 +202,7 @@ if(isset($_POST['submit'])){
                 }else{
                     $error3  = "Data gagal diupdate";
                 }
-            //Untuk Insert
+            //Untuk Insert barang baru (main problem)
             }else if($op == "insert"){
                 $id_stuff = $_POST['id_stuff2'];
                 $stuff_name = $_POST['stuff_name2'];
