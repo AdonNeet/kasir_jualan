@@ -138,6 +138,11 @@ if(isset($_GET['op'])){
                             </tbody>
                         </thead>
                 </table>
+                <div class="mb-3">
+                    <a href="inTransaksi.php">
+                        <button type="button" class="btn btn-warning"> Kembali ke Transaksi </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

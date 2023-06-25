@@ -54,6 +54,7 @@ if($op == 'delete'){
         $error2 = "Silahkan masukkan id_staff";
     }
 
+    // get to know the job
     if($passNow != ""){
         $q1 = "select job from karyawan where id_staff = '$id_staff'";
         $rest = mysqli_query($koneksi, $q1);
@@ -61,7 +62,7 @@ if($op == 'delete'){
         if(strval($r2['job']) == 'Gudang'){
             $job = "Gudang";
         } else {
-            $error3 = "Kasir tidak dapat memanipulasi gudang";
+            $error3 = "Kasir tidak dapat memanipulasi barang";
         }
     } 
 

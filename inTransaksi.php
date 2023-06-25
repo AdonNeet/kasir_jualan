@@ -5,11 +5,9 @@ $data = "";
 $tanggal = "";
 $stuff_name = "";
 $id_stuff = "";
-$id_staff = "";
 $id_rak = "";
 $stok = "";
 $jumlah = "";
-$pass = "";
 
 
 $error1 = "";
@@ -17,16 +15,21 @@ $error2 = "";
 $error3 = "";
 $sukses = "";
 
-$id_staffNow = "";
+$id_staff = "";
+$pass = "";
+$job = "";
+
+$passNow = "";
 
 
 if (isset($_POST['submit'])) {
     $tanggal = $_POST['date'];
     $data = $_POST['data'];
-    $id_staff = $_POST['id_staff'];
     $jumlah = $_POST['jumlah'];
+    $id_staff = $_POST['id_staff'];
     $pass = $_POST['pass'];
 
+    // get data barang
     if($data != ""){
         $q1 = "select id_stuff from barang where id_stuff = '$data' or stuff_name = '$data'";
         $rest = mysqli_query($koneksi, $q1);
@@ -40,21 +43,34 @@ if (isset($_POST['submit'])) {
         $error1 = "Silahkan masukkan barang";
     }
 
-    if($pass != ""){
-        $q1 = "select id_staff from karyawan where pass = '$pass'";
+    // get pass from id staff
+    if($id_staff != ""){
+        $q1 = "select pass from karyawan where id_staff = '$id_staff'";
         $rest = mysqli_query($koneksi, $q1);
         $r2 = mysqli_fetch_assoc($rest);
         if(is_null($r2) == false){
-            $id_staffNow = strval($r2['id_staff']);
+            $passNow = strval($r2['pass']);
         } else {
             $error2 = "Terdapat kesalahan pada id_staff atau password";
         }
     } else {
-        $error2 = "Silahkan masukkan password";
+        $error2 = "Silahkan masukkan id_staff";
     }
 
-    if($id_staff != "" and $id_staffNow != "" and is_null($r1) ==  false and is_null($r2) ==  false){
-        if($id_staff == $id_staffNow){    
+    // get to know the job
+    if($passNow != ""){
+        $q1 = "select job from karyawan where id_staff = '$id_staff'";
+        $rest = mysqli_query($koneksi, $q1);
+        $r2 = mysqli_fetch_assoc($rest);
+        if(strval($r2['job']) == 'Kasir'){
+            $job = "Kasir";
+        } else {
+            $error3 = "Gudang tidak dapat memanipulasi transaksi";
+        }
+    }
+
+    if($id_staff != "" and $pass != "" and $error1 ==  "" and $error2 ==  "" and $job == 'Kasir'){
+        if($pass == $passNow){    
             if ($tanggal && $id_stuff && $id_staff && $jumlah) {
                 // insert into transaksi
                 $query  = "insert into transaksi(tanggal, id_stuff, id_staff, jumlah) values ('$tanggal', '$id_stuff', '$id_staff', $jumlah);";
@@ -223,6 +239,17 @@ if (isset($_POST['submit'])) {
                 </form>
             </div>
         </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="mb-3">
+                    <a href="searchStuff.php">
+                        <button type="button" class="btn btn-warning"> Cari Barang! </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
