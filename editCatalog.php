@@ -217,30 +217,21 @@ if(isset($_POST['submit'])){
                         $sukses     = "Berhasil memasukkan data";
 
                         // insert into log_barang
-                        $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('O01', '$today', '$id', '$name', '$category', $price, 'withdraw')";
+                        $sql1 = "insert into log_barang(id_staff, tanggal, id_stuff, stuff_name, kategori, harga, ket) values ('$id_staff', '$today', '$id_stuff', '$stuff_name', '$kategori', $harga, 'added')";
                         $q1 = mysqli_query($koneksi, $sql1);
 
-                        // insert into a new rak in gudang, use substr
+                        // insert into a gudang
+                        $sql1 = "insert into gudang(id_stuff, stok) values ('$id_stuff', $stok)";
+                        $q1 = mysqli_query($koneksi, $sql1); 
 
-                        // old code below
                         // get id_rak
-                        $q1 = "select gudang.id_rak from barang natural join gudang where id_stuff = '$id'";
+                        $q1 = "select gudang.id_rak from barang natural join gudang where id_stuff = '$id_stuff'";
                         $rest = mysqli_query($koneksi, $q1);
                         $r = mysqli_fetch_array($rest);
                         $id_rak = $r['id_rak'];
 
-                        // get stok saat ini
-                        $q2 = "select stok from gudang where id_rak = '$id_rak'";
-                        $rest = mysqli_query($koneksi, $q2);
-                        $r = mysqli_fetch_array($rest);
-                        $stock = $r['stok'];
-
-                        // insert stok berdasarkan id_rak, make new id rak
-                        $q3 = "update from gudang where id_rak = '$id_rak'";
-                        $commit = mysqli_query($koneksi, $q3);
-
                         // insert into log_gudang
-                        $q4 = "insert into log_gudang(tanggal, id_staff, id_rak, jumlah, ket) values ('$today', '$id_staff', '$id_rak', $stok, 'add')";
+                        $q4 = "insert into log_gudang(tanggal, id_staff, id_rak, jumlah, ket) values ('$today', '$id_staff', '$id_rak', $stok, 'added')";
                         $commit = mysqli_query($koneksi, $q4);
                     }else{
                         $error      = "Gagal memasukkan data";
@@ -430,7 +421,7 @@ if($op == 'edit' & isset($_GET['id'])){
                     <div class="mb-3 row">
                         <label for="Karyawan" class="col-sm-2 col-form-label">Id Karyawan</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="ID" name="id_staff" placeholder="id_staff" value="<?php echo $id_staff ?>">
+                            <input type="text" class="form-control" id="ID" name="id_staff" placeholder="id_staff" value="">
                         </div>
                     </div>
 
@@ -438,7 +429,7 @@ if($op == 'edit' & isset($_GET['id'])){
                         <label for="No" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="ID" name="pass"
-                                value="<?php echo $pass ?>">
+                                value="">
                         </div>
                     </div>
 
