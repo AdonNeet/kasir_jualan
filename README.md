@@ -4,7 +4,9 @@
   </b>
 </h1>
 
-A database CRUD implementation from php to MySQL (known as My Squirrel as joke) 
+A database CRUD implementation from php to MySQL (known as My Squirrel as joke)  
+
+[Member ID: 194, 228, 229]
 
 <br><br>
 
@@ -40,8 +42,9 @@ $dbname = "your-deployed-DB";
 <br>
 
 ### Note :  
-+ Use xampp, because there was built-in PHP (jangan lupa set PHP di variabel environment pada komputer) 
-+ Jangan lupa untuk mendeploy database (market.sql) pada MySQL
++ Use xampp, because there was built-in PHP (Don't forget to set PHP in variabel environment on your computer) 
++ Don't forget to deploy the database (market.sql) in MySQL
++ Don't forget to turn on the Apache and MySQL server in xampp when you want to run the application
 
 
 <br>
