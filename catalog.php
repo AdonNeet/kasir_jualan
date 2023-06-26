@@ -17,14 +17,36 @@ include './connDB.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-        <style>
-            .mx-auto {width:800px}
-            .card {margin-top: 10px}
-            .col-12 {margin-bottom : 10px}
-        </style>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        .mx-auto {width:800px}
+        .card {margin-top: 80px}
+        .col-12 {margin-bottom : 10px}
+    </style>
 </head>
 
 <body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero" data-text="sistem basis data" class="lampu">sistem basis data</a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger"><div class="bar"></div></div>
+                    <ul>
+                        <li><a href="index.html" data-after="Home">Home</a></li>
+                        <li><a href="karyawan.php" data-after="Karyawan">Karyawan</a></li>
+                        <li><a href="inTransaksi.php" data-after="Transaksi">Transaksi</a></li>
+                        <li><a href="searchStuff.php" data-after="Cari Barang">Cari Barang</a></li>
+                        <li><a href="catalog.php" data-after="Katalog">Katalog</a></li>
+                        <!-- <li><a href="#" data-after="Home">Home</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="mx-auto">
         <!--untuk mengeluarkan data-->
         <div class="card">
@@ -88,4 +110,5 @@ include './connDB.php';
             </div>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
