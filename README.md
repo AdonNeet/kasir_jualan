@@ -9,7 +9,7 @@ Note :
 + Jangan lupa untuk mendeploy database (market.sql) pada MySQL
 + Jangan lupa untuk set-up connector pada connDB.php 
 + Clone di dalam file htdocs nya XAMPP
-+ Tambahkan data karyawan secara manual pada database :D
++ Tambahkan data karyawan secara manual pada database dengan menjalankan insertStaff.php :D
 
 <br>
 
