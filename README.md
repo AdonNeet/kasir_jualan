@@ -10,7 +10,7 @@ A database CRUD implementation from php to MySQL (known as My Squirrel as joke)
 
 <br><br>
 
-### Todo's Before Using It
+### Todo's Before Using It   
 
 + Clone this repo inside the htdocs of xampp
 
@@ -41,7 +41,7 @@ $dbname = "your-deployed-DB";
 
 <br>
 
-### Note :  
+### Note   
 + Use xampp, because there was built-in PHP (Don't forget to set PHP in variabel environment on your computer) 
 + Don't forget to deploy the database (market.sql) in MySQL
 + Don't forget to turn on the Apache and MySQL server in xampp when you want to run the application
