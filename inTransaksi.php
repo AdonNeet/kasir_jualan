@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
                     <div class="hamburger"><div class="bar"></div></div>
                     <ul>
                         <li><a href="index.html" data-after="Home">Home</a></li>
-                        <li><a href="karyawan.php" data-after="Karyawan">Karyawan</a></li>
+                        <li><a href="staff.php" data-after="Karyawan">Karyawan</a></li>
                         <li><a href="inTransaksi.php" data-after="Transaksi">Transaksi</a></li>
                         <li><a href="searchStuff.php" data-after="Cari Barang">Cari Barang</a></li>
                         <li><a href="catalog.php" data-after="Katalog">Katalog</a></li>
