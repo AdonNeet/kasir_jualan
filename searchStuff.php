@@ -1,5 +1,5 @@
 <?php
-include "../connDB.php";        // if in same folder just use /connDB.php
+include "./connDB.php";        // if in same folder just use /connDB.php
 
 // deklarasi variable
 $id_stuff = "";

@@ -1,5 +1,5 @@
 <?php
-include "../connDB.php";
+include "./connDB.php";
 $today = date("Y-m-d");
 
 $error1 = "";

@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@300;400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Ysabeau SC';
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Section */
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+#header .lampu{
+    position: relative;
+    margin: 20px;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    color: #0e3742;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+    -webkit-box-reflect: below 1px linear-gradien(transparent, #008);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 10s linear infinite;
+}
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, 0.24);
+}
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 1s ease left;
+}
+#header .nav-list ul.active{
+    left: 0%;
+}
+#header .nav-list ul a{
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+    animation: animate_hover 2s linear infinite;
+}
+#header .nav-list ul a::after{
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    font-size: 15rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 1s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+#header .nav-list ul li:hover a{
+    color: limegreen;
+}
+#header .hamburger{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 20px;
+}
+#header .hamburger:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top, bottom;
+}
+#header .hamburger .bar::after{
+    top: 8px;
+}
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+/* End Header Section*/
+
+/* Hero Section */
+#hero{
+    background-image: url("img/1.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+    z-index: 1;
+}
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+#hero .hero{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 2s;
+}
+#hero h1:nth-child(1){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 3s;
+}
+#hero h1:nth-child(3){
+    animation: text_reveal_kelompok .5s ease forwards;
+    animation-delay: 4s;
+}
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: limegreen;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(1) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 2.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 3.5s;
+}
+#hero .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid limegreen;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+    animation: animate_hero 3s linear infinite;
+}
+#hero .cta:hover{
+    color: white;
+    background-color: limegreen;
+}
+/* Ahkir Hero Section */
+
+/* Awal Section Anggota */
+#anggota .anggota{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#anggota .section-title{
+    font-size: 10rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+#anggota .anggota-top h1{
+    position: relative;
+    font-size: 14vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+}
+#anggota .anggota-top h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: lime;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid lime;
+    overflow: hidden;
+    animation: animate_anggota 6s linear infinite;
+}
+#anggota .anggota-top p{
+    font-size: 3rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+#anggota .anggota-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+#anggota .anggota-item{
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url("img/4.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 10px 5%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+#anggota .anggota-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, white, black 100%);
+    opacity: .8;
+    z-index: -1;
+}
+#anggota .anggota-middle .icon{
+    height: 70px;
+    width: 70px;
+    margin-bottom: 20px;
+}
+#anggota .anggota-item h2{
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+#anggota .anggota-item p{
+    color: black;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.9rem;
+}
+
+/* Ahkir Section Anggota */
+
+/* Animasi Hero */
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }100%{
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100% {
+        color: white;
+    }
+}
+@keyframes text_reveal_kelompok{
+    100% {
+        color: limegreen;
+        font-weight: 500;
+    }
+}
+@keyframes animate{
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
+}
+@keyframes animate_hero{
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+        color: #fff;
+        text-shadow: 0 0 10px red,
+        0 0 20px red,
+        0 0 40px red,
+        0 0 80px red,
+        0 0 160px red;
+    }
+}
+@keyframes animate_hover{
+    0%, 20%, 65.1%, 80%{
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+        color: #fff;
+        text-shadow: 0 0 10px lime,
+        0 0 20px lime,
+        0 0 40px lime,
+        0 0 80px lime,
+        0 0 160px lime;
+    }
+}
+@keyframes animate_anggota{
+    0%, 10%, 100%{
+        width: 0;
+    }
+    70%, 90%{
+        width: 100%;
+    }
+}
+    /* Ahkir Animasi Hero */
