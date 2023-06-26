@@ -1,3 +1,11 @@
+<html>
+<style>
+body, h1, h2, h3, h4, h5, h6  {
+  font-family: “Comic Sans MS”, “Comic Sans”, cursive ;
+}
+</style>
+</html>
+
 <h1 align= "center">
   <b>
     kasir_jualan
@@ -40,7 +48,7 @@ $dbname = "your-deployed-DB";
 <br>
 
 ### Note :  
-+ Gunakan XAMPP, karena sudah ada built-in PHP (jangan lupa set PHP di variabel environment pada komputer) 
++ Use xampp, because there was built-in PHP (jangan lupa set PHP di variabel environment pada komputer) 
 + Jangan lupa untuk mendeploy database (market.sql) pada MySQL
 
 
