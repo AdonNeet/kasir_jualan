@@ -405,7 +405,8 @@ if($op == 'edit' & isset($_GET['id'])){
                 ?>
 
                 <?php
-                    if($_GET['id'] == $id_stuff2 or $id_stuff2 == ""){
+                    if(isset($_GET['id'])){
+                        if($_GET['id'] == $id_stuff2 or $id_stuff2 == ""){
                 ?>
                 <form action="" method="POST">
                     <div class="mb-3 row">
@@ -475,6 +476,77 @@ if($op == 'edit' & isset($_GET['id'])){
                         
                     </div>
                 <?php
+                        }
+                    } else if($_GET['op'] == 'insert'){
+                ?>
+                <form action="" method="POST">
+                    <div class="mb-3 row">
+                        <label for="id_stuff2" class="col-sm-2 col-form-label">ID Barang</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="id_stuff2" value="<?php echo $id_stuff2 ?>"></input>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="stuff_name2" class="col-sm-2 col-form-label">Nama Barang</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="stuff_name2" value="<?php echo $stuff_name2 ?>"></input>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="kategori2" class="col-sm-2 col-form-label">Kategori</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="kategori2" value="<?php echo $kategori2 ?>"></input>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="harga2" class="col-sm-2 col-form-label">Harga</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="harga2" value="<?php echo $harga2 ?>"></input>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="harga2" class="col-sm-2 col-form-label">Stok</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="stok2" value="<?php echo $stok2 ?>"></input>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="Karyawan" class="col-sm-2 col-form-label">Id Karyawan</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="id_staff" placeholder="id_staff" value="">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="No" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ID" name="pass"
+                                value="">
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-12">
+                        <a href="editCatalog.php?op=edit&id=<?php  
+                            if(isset($_POST[$id_stuff2]) == false){
+                                echo $id_stuff2;
+                            }else {
+                                echo $_POST[$id_stuff2];
+                            }         
+                        ?>">
+                            <button type="submit" name="submit" value="Simpan Data" class="btn btn-primary"> Simpan Data </button>
+                        </a> 
+                    </div>
+                    
+                    <div class="col-1">
+                        
+                    </div>
+                <?php    
                     }
                 ?>
             </div>
