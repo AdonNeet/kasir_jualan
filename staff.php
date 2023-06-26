@@ -22,7 +22,7 @@ include "connDB.php";
         }
 
         .mx-auto {
-            width: 86vw;
+            width: 1200px;
         }
     </style>
 </head>
