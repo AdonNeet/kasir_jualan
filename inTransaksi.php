@@ -106,6 +106,8 @@ if (isset($_POST['submit'])) {
         } else {
             $error3 = "Terdapat kesalahan pada id_staff atau password";
         }
+    } else {
+        $error2 = "Silahkan masukkan password";
     }
 }
 
