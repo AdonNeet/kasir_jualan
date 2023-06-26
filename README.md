@@ -19,7 +19,7 @@ git clone https://github.com/AdonNeet/kasir_jualan.git
 + Deploy the market.sql into your MySQL
 
 ```terminal
-mysql -u database_username -p database_name < [full dir into...]/kasir_jualan/market.sql
+mysql -u database_username -p database_name < [full dir path into...]/kasir_jualan/market.sql
 ```
 
 + Don't forget to edit the connDB.php
