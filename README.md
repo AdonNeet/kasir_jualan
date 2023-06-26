@@ -9,6 +9,7 @@ Note :
 + Jangan lupa untuk mendeploy database (market.sql) pada MySQL
 + Jangan lupa untuk set-up connector pada connDB.php 
 + Clone di dalam file htdocs nya XXAMP
++ Tambahkan data karyawan secara manual pada database :D
 
 <br>
 
