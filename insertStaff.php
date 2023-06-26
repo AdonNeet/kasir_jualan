@@ -1,5 +1,5 @@
 <?php
-include "connDB.php";
+include "./connDB.php";
 
 $id_staff = "K01";
 $name = "Azza_228";
