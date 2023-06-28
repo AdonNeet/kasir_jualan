@@ -33,4 +33,7 @@ $rest = mysqli_query($koneksi, $q1);
 $q1 = 'alter table gudang AUTO_INCREMENT = 1';
 $rest = mysqli_query($koneksi, $q1);
 
+$q1 = 'alter table transaksi AUTO_INCREMENT = 1';
+$rest = mysqli_query($koneksi, $q1);
+
 ?>
