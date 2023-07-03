@@ -52,7 +52,7 @@ include "./connDB.php";
     <div class="mx-auto">
         <div class="card">
             <div class="card-header text-white bg-secondary">
-                Data Nasabah
+                Data Karyawan
             </div>
             <div class="card-body">
                 <table class="table">

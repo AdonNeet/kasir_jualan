@@ -35,6 +35,16 @@ $dbname = "your-deployed-DB";
 ```
 
 + Run insertStaff.php to insert the staff data
+```terminal
+php [full dir path into...]/kasir_jualan/inserStaff.php
+```
+There is a staff account that was set-ed in insertStaff.php
+| ID    | Name         | Job         | Pass         |
+| :---  |    :----:    |    :----:   |         ---: |
+| G01   | Bara         | Warehouse   | 12345678     |
+| G02   | Damar        | Warehouse   | qwertyui     |
+| K01   | Azza         | Cashier     | asdfghjk     |
+
 + Acces https://localhost/kasir_jualan to run the application
 
 
